@@ -1,0 +1,9 @@
+Problem 8:  Kids With the Greatest Number of Candies
+
+#usage of map function. Theory for map function from Geeks for Geeks: https://www.geeksforgeeks.org/python-lambda-anonymous-functions-filter-map-reduce/
+
+Code:
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        maxVal = max(candies)
+        return map(lambda x: maxVal <= x+extraCandies, candies)
