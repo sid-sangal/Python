@@ -1,3 +1,7 @@
+Key takeaways: ndex blank = first element, index -1 = last element
+         index must be an integer and we cannot use len(string)/2 in range. Instead use len(string)//2.  #exploit the fact that last index of string is -1. use 1 for loop for front traverse and one for back.
+ #the default output of a function is true or false, no need to type print statements.
+ 
 Day 0 (26/12): Making a plan. Writing down topics that would be covered.
 
 #String: index blank = first element, index -1 = last element
