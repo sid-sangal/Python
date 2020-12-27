@@ -1,0 +1,24 @@
+Problem 7: Max value of sub string
+
+My solution: 
+accounts = [[1,5],[7,3],[3,5]]
+y=0
+for i in accounts:
+    x = sum(i)
+    print(x)
+    if x>=y:
+        y=x
+return y
+
+Better solution: 
+class Solution:
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+        result = []
+        for each in accounts:
+            result.append(sum(each))
+        return max(result)
+        
+short solution for my approach:
+class Solution:
+    def maximumWealth(self, accounts: List[List[int]]) -> int:
+       return max([sum(x) for x in accounts])
