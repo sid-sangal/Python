@@ -1,1 +1,14 @@
+Shuffle an array:
 
+New function: List.extend takes only one argument so you must create tuples and extend.
+
+The difference between list. append and list.extend is that if you provide tuples as input argument to both, append will create a new array with sets of tuples of length i/2 and extend will create a new array of length i with each individual element and no tuples.
+My solution: 
+
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        new=[]
+	
+        for i in range(n):
+            new.extend([nums[i],nums[n+i]])
+        return new
