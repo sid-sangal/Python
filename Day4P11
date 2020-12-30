@@ -1,0 +1,8 @@
+problem: Goal Parser Interpretation
+
+Learning: Idea was correct, to use .replace function. New learning is how to replace multiple elements of the string. using two .replace continuously.
+
+My solution:
+class Solution:
+    def interpret(self, command: str) -> str:
+             return command.replace('()','o').replace('(al)','al')
