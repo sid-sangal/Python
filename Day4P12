@@ -1,1 +1,11 @@
 Problem: Jewels and stones
+
+Learning: using the "+=" operator to increment the count of out and not "=" and more variables.
+
+My solution:
+class Solution:
+    def numJewelsInStones(self, jewels: str, stones: str) -> int:
+        out=0
+        for i in jewels:
+            out += stones.count(i)
+        return out
