@@ -1,1 +1,26 @@
+1528. Shuffle String
 
+Learning: copy question properly. which list/string to use in the loop. convert list to string. .join function to convert list to string.
+
+My solution:
+
+class Solution:
+    def restoreString(self, s: str, indices: List[int]) -> str:
+        new = [0]*len(s)
+        out = ""
+        temp = 0
+
+        for i in indices:
+    
+            new[i] = s[temp]
+            temp +=1
+        for ele in new:
+            out += ele
+        return out
+        
+Better solution:
+
+new = [none]*len(s)
+for i in rnage (len(s)):
+  new[indices[i]] = s[i]
+return "".join(new)
