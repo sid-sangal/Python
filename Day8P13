@@ -1,0 +1,32 @@
+1365. How Many Numbers Are Smaller Than the Current Number
+
+Learning: For increment operator needs the array to be a zero array and not empty. Usage of dictionary to reduce time complexity. 
+
+My solution:
+nums = [8,1,2,2,3]
+l = len(nums)
+less = [0]*l
+for i in range (l):
+    for j in nums:
+        if nums[i]>j:
+            less[i] = less[i]+1
+print(less)
+
+Better solution:
+
+class Solution:
+    def smallerNumbersThanCurrent(self, nums: List[int]) -> List[int]:
+         temp = nums.copy()
+         temp.sort()
+         ans = dict()
+         res = list()
+         for i in range(len(nums)):
+             if i ==0:
+                 ans[temp[i]]=i
+             else:
+                if temp[i] not in ans:
+                    ans[temp[i]]=i
+         for k in nums:
+             res.append(ans[k])
+         return res
+            
