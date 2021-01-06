@@ -1,0 +1,31 @@
+1342. Number of Steps to Reduce a Number to Zero
+
+Learning: When to use while loop instead of for.
+
+My solution:
+
+class Solution:
+    def numberOfSteps (self, num: int) -> int:
+        count = 0
+        while num!= 0:
+            if num%2 == 0:
+                num = num/2
+                count +=1
+            else:
+                num -=1
+                count +=1
+        return count
+    
+Better solution: One change being using one count increment operator outside the if-else condition instead of each. does not make a diff though. also //=2 syntax like the incrementand decrement operator.
+
+class Solution:
+    def numberOfSteps (self, num: int) -> int:
+        count = 0
+        while num:
+            if num%2 == 0:
+                num //=2
+            
+            else:
+                num -=1
+            count +=1
+        return count
