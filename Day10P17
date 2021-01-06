@@ -1,0 +1,19 @@
+1281. Subtract the Product and Sum of Digits of an Integer
+
+Learning: convert string element to integer in order to multiply iteratively.
+
+My solution:
+class Solution:
+    def subtractProductAndSum(self, n: int) -> int:
+        prod = 1
+        summ = 0
+        new = str(n)
+        for i in new:
+            j = int(i)
+            prod = prod*j
+            summ = summ + j
+        return prod-sum
+        
+Better solution:
+
+Mine appears to be the better one . Key step: converting into int(i) forst and then solving instead of int(i) in each step or using shile loop and taking %10 and n//10
