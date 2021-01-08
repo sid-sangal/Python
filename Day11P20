@@ -1,0 +1,23 @@
+(imp) 1389. Create Target Array in the Given Order
+
+Learning: The most interesting question till now with 2 major learnings. Usage of the for loop to traverse two separate lists simultaneously using two operators and the lists in zip format.
+          Usage of the .insert function as opposed to the .extend and .append functions. The .insert function does not replace the element at the chosen index but right shifts it and 
+My solution: I could not do it but now know how to using two methodds.
+
+Solutions: Using the right shift .insert function and simultaneous traversal of two lists in zip format
+ 
+ class Solution:
+    def createTargetArray(self, nums, index):
+        target = []
+        for i,value in zip(index, nums):
+            target.insert(i,value)
+        return target
+
+Other solution: without using any in-built functions:
+
+class Solution:
+    def createTargetArray(self, nums, index):
+        target = []
+        for i in range(len(nums)):
+            target = target[:index[i]] + [nums[i]] + target[index[i]:]
+        return target
