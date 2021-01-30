@@ -1,0 +1,17 @@
+Brute force was o(n^2) and took too much time to execute. It is essentially a question where we need to finf the maximum difference between two elements where the higher number has it's index after the lower number.
+Buying at the day with smaller price and selling at higher for maximizing diff.
+
+We will need to keep track of atleast 2 variables, lowest_value and max_difference. The O(n) solution is as following:
+
+It is a modification of Kadane's algorithm which is classified under dynamic programming.
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        max_profit, min_price = 0, float('inf')             #set max profit to 0 and min_price to infinity to compare with the current elements and max_profit 
+        for price in prices:
+            min_price = min(min_price, price)               #compare current price and current minimum price which will later be set to 1
+            profit = price - min_price                      #current profit tracking corresponding to the current price
+            max_profit = max(max_profit, profit)            #is the current profit the best or not? it will stay at the max profit once reached.
+        return max_profit
+        
+ #here we have eleminated the need for keeping the track of the indices of the elements.
