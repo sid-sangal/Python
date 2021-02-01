@@ -1,0 +1,2 @@
+THere are two important parts to any class. The first part is handling the __init__ which is called the constructor and the subsequent functions in the class which utilize the self variables that have been defined in the init function.
+
