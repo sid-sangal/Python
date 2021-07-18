@@ -1,0 +1,28 @@
+o(n^2) solution:
+
+class Solution(object):
+    def twoSum(self, nums, target):
+        for i in range(len(nums)):
+            for j in range(len(nums)):
+                if i!=j:
+                    if nums[i]+nums[j] == target:
+                        return [i,j]
+ 
+ 
+ O(n) solution using hash map and single pass over the list:
+ 
+ The logic is to understand what we have at our disposal. We have a target value, and a given list of integers that will add up to the target. Or returns null if does not exist.
+ 
+ The idea is to dind the complement value (target - current) and check if that exists i nthe remaining of the list.
+ 
+ We use a hash map and take advantage of it's o(1) lookup times.
+ 
+ hashmap = {}
+ l = len(nums)
+ for i in range(l):
+ # we are using the indices and not values as the return type is an array of length 2 with the indices of the integers that sum up to target.
+    remain = target - nums[i]
+    if remain in hashmap:#constant lookup time
+        return [i,hashmap[remain]]
+    #we store the index as the value and the integer values as the indices of the hashmap.
+    hashmap[nums[i]] = i
